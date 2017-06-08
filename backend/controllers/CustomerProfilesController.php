@@ -18,6 +18,8 @@ use backend\models\Search;
  */
 class CustomerProfilesController extends Controller
 {
+    const softdrink = 'rootbeer'; 
+
     /**
      * @inheritdoc
      */
