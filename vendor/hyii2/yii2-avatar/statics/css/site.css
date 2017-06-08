@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+img {
+  max-width: 100%; /* This rule is very important, please do not ignore this! */
+}
+.avatar-view .avatar-prompt{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+}

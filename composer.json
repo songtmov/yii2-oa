@@ -1,0 +1,81 @@
+{
+    "name": "tmov/oa",
+    "description": "Yii 2 TMOV OA project",
+    "keywords": ["yii2", "OA", "TMOV", "project"],
+    "homepage": "http://www.sstmov.com",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yidas/yii2-composer-bower-skip": "~2.0.0",
+        "yiisoft/yii2": "~2.0.6",
+        "yiisoft/yii2-bootstrap": "2.0.6",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "mdmsoft/yii2-admin": "2.x-dev",
+        "wbraganca/yii2-dynamicform": "dev-master",
+        "liyunfang/yii2-widget-linkpager": "^1.0",
+        "kartik-v/yii2-date-range": "*",
+        "kartik-v/yii2-widget-select2": "@dev",
+        "kartik-v/yii2-widget-fileinput": "@dev",
+        "fxp/composer-asset-plugin": "~1.0",
+        "yiisoft/yii2-jui": "~2.0.0",
+        "zhuravljov/yii2-rest": "*",
+        "yiisoft/yii2-httpclient": "@dev",
+        "yiisoft/yii2-imagine": "~2.0.0",
+        "kartik-v/yii2-widget-datetimepicker": "*",
+        "kartik-v/yii2-widget-activeform": "@dev",
+        "kartik-v/yii2-dialog": "@dev",
+        "kartik-v/yii2-widget-depdrop": "@dev",
+        "kartik-v/yii2-widget-colorinput": "*",
+        "kartik-v/yii2-widget-timepicker": "*",
+        "yiisoft/yii2-redis": "~2.0.0",
+        "kartik-v/yii2-widget-switchinput": "*",
+        "kartik-v/yii2-widget-growl": "*",
+        "arogachev/yii2-excel": "*",
+        "mpdf/mpdf": "7.0.x-dev",
+        "kartik-v/yii2-widget-sidenav": "*",
+        "kartik-v/yii2-widget-rating": "*",
+        "kartik-v/yii2-widget-touchspin": "*",
+        "song-yu/oa" : "~1.0",
+        "kartik-v/yii2-checkbox-x": "@dev",
+        "2amigos/yii2-date-picker-widget" : "~1.0",
+        "unclead/yii2-multiple-input": "~2.0"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset":{
+            "installer-paths":{
+                
+            }
+        }
+    },
+    "extra": {
+        
+    },
+    "scripts": {
+        "post-install-cmd": "php init --env=Development --overwrite=n"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
