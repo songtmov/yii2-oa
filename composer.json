@@ -45,10 +45,11 @@
         "kartik-v/yii2-widget-sidenav": "*",
         "kartik-v/yii2-widget-rating": "*",
         "kartik-v/yii2-widget-touchspin": "*",
-        "song-yu/oa" : "~1.0",
+        "song-yu/yii-api-rsa" : "~1.0",
         "kartik-v/yii2-checkbox-x": "@dev",
         "2amigos/yii2-date-picker-widget" : "~1.0",
-        "unclead/yii2-multiple-input": "~2.0"
+        "unclead/yii2-multiple-input": "~2.0",
+        "kartik-v/yii2-export": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

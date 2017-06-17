@@ -27,19 +27,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             // 'id',
-            // 'meeting_type',
-            [
-                'attribute' => 'meeting_type',
-                'value' => \common\models\MeetingConvey::$status[$model->meeting_type],
-            ],
+            'meeting_type',
             'meeting_topic',
             'meeting_address',
-
-            // 'cstore_id',
-            [
-                'attribute' => 'cstore_id',
-                'value' => \common\models\Cstore::find()->select('store_name')->where(['id' => $model->cstore_id])->one()['store_name'],
-            ],
+            'cstore_id',
             'cstore_address',
             'owner_id',
             'owner_phone',
@@ -55,27 +46,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'instructor_id',
             'cameraman_id',
             'engineer_id',
-            // 'doctor_id',
-            [
-                'attribute' => 'doctor_id',
-                'value' => \common\models\UserModel::find()->select('username')->where(['id' => $model->doctor_id])->one()['username'],
-            ], 
-            [
-                'attribute' => 'host_id',
-                'value' => \common\models\UserModel::find()->select('username')->where(['id' => $model->host_id])->one()['username'],
-            ],[
-                'attribute' => 'asistant_id',
-                'value' => \common\models\UserModel::find()->select('username')->where(['id' => $model->asistant_id])->one()['username'],
-            ],[
-                'attribute' => 'consultant_id',
-                'value' => \common\models\UserModel::find()->select('username')->where(['id' => $model->consultant_id])->one()['username'],
-            ],[
-                'attribute' => 'nurse_id',
-                'value' => \common\models\UserModel::find()->select('username')->where(['id' => $model->nurse_id])->one()['username'],
-            ],[
-                'attribute' => 'resident_id',
-                'value' => \common\models\UserModel::find()->select('username')->where(['id' => $model->resident_id])->one()['username'],
-            ],
+            'doctor_id',
+            'host_id',
+            'asistant_id',
+            'consultant_id',
+            'nurse_id',
+            'resident_id',
             'travel_arrangement:ntext',
             'ticket',
             'draw',

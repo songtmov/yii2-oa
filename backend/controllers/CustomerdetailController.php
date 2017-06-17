@@ -45,8 +45,7 @@ class CustomerdetailController extends Controller
 
         $post = Yii::$app->request->queryParams;
         $post['CustomerDetail']['customer_id'] = $id;
-        // p($post);die;
-        
+
         $dataProvider = $searchModel->search($post);
         
         return $this->render('index', [
@@ -63,7 +62,7 @@ class CustomerdetailController extends Controller
     public function actionView($id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $this->findModel($id)
         ]);
     }
 

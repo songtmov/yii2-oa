@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
 use mdm\admin\components\Helper;
+use kartik\export\ExportMenu;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\BillingOperation */
@@ -12,7 +13,28 @@ use mdm\admin\components\Helper;
 $this->title = Yii::t('common','Billing Operations');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
+<?php 
+    $gridColumns = [
+        'id',
+        'client_id',
+        'surgical_id',
+        'hakim_id',
+        'assistant_id',
+        'nurse_id',
+        'surgery_cost',
+        'counselor_id',
+        'store_id',
+        'sale_id',
+        'status',
+        'operation_time',
+        'created_time',
+        'order_num'
+    ];
+    echo ExportMenu::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => $gridColumns
+    ]);
+?>
 <div class="billing-operation-index">
     
     <!-- <?php  //echo $this->render('_search', ['model' => $searchModel]); ?> -->

@@ -158,7 +158,7 @@ class BillingController extends Controller
                 $objectPHPExcel->getActiveSheet()->getStyle('B3:O3')
                     ->getBorders()->getVertical()->setBorderStyle(\PHPExcel_Style_Border::BORDER_THIN);
                 
-                //设置颜色
+                //设置颜色a 
                 $objectPHPExcel->getActiveSheet()->getStyle('B3:O3')->getFill()
                     ->setFillType(\PHPExcel_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('FF66CCCC');
             }
@@ -228,7 +228,9 @@ class BillingController extends Controller
                             break;
                     }
                 }else if($k == 'created_time'){
-                    $obj[$key]->$k = date('Y-m-d h:i:s',$v);
+                    if(strlen(intval($v)) == 10){
+                        $obj[$key]->$k = date('Y-m-d h:i:s',intval($v));
+                    }
                 }else if($k == 'surgical_id'){
                     $obj[$key]->$k = SurgicalItems::find()->select('entry_name')->where(['id' => $v])->one()['entry_name'];
                 }else if($k == 'store_id'){
@@ -240,10 +242,6 @@ class BillingController extends Controller
         }
          return $obj;
     }
-
-    public function actionReport() {
-        
-    }
     
     public function actionPersonal()
     {
@@ -252,7 +250,6 @@ class BillingController extends Controller
         $post = Yii::$app->request->queryParams;
         $post['BillingOperation']['counselor_id'] = $user_id;
         $dataProvider = $searchModel->search($post);
-        
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -337,7 +334,7 @@ class BillingController extends Controller
                     $model->save();
                     //获取新增的手术单的ID
                     $billingId = $model->getPrimaryKey();
-
+                    
                     //新增该手术单所需要的耗材的订单
                     $supplieOrder = new SupplieOrder();
                     $supplieOrder->bill_id = $billingId;
@@ -418,13 +415,19 @@ class BillingController extends Controller
     
     public function actionArrangeOperation()
     {
-        $searchModel = new Arrange();
-
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        // p($dataProvider);die;
+        $username = UserModel::find()->select('username')->where(['id' => yii::$app->user->id])->one()['username'];
+        $res = BillingOperation::find()->select(['assistant_id','id'])->all();
+        $new_res = [];
+        foreach ($res as $key => $value) {
+            if(in_array($username,explode(',',$value->assistant_id))){
+                $new_res[] = $value->id;
+            }
+        }
+        $model = new UserModel();
+        $new_res = BillingOperation::find()->where(['id' => $new_res])->all();
         return $this->render('arrange-operation', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'data' => $new_res,
+            'model' => $model
         ]);
     }
 

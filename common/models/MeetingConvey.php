@@ -69,7 +69,7 @@ class MeetingConvey extends \yii\db\ActiveRecord
     {
         return [
             [['meeting_type'], 'required'],
-            [['meeting_type', 'owner_phone', 'cstore_number', 'cstore_area', 'manager_phone', 'emplyees_number', 'hotel_floor', 'ticket', 'draw', 'invitation', 'box'], 'integer'],
+            [['owner_phone', 'cstore_number', 'cstore_area', 'manager_phone', 'emplyees_number', 'hotel_floor', 'ticket', 'draw', 'invitation', 'box'], 'integer'],
             [['training_date', 'creattime'], 'safe'],
             [['travel_arrangement', 'vehicle_type', 'ko_solution', 'place_solution', 'comment'], 'string'],
             [['meeting_topic', 'meeting_address', 'cstore_id'], 'string', 'max' => 255],
@@ -130,7 +130,7 @@ class MeetingConvey extends \yii\db\ActiveRecord
 
             'ko_solution' => Yii::t('common','秒杀方案'),
             'place_solution' => Yii::t('common','会场方案'),
-            'creattime' => Yii::t('common','完成会议传达时间'),
+            'creattime' => Yii::t('common','完成传达时间'),
             'comment' => Yii::t('common','备注'),
         ];
     }

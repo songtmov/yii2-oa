@@ -18,8 +18,8 @@ class MeetingConvey extends MeetingConveyModel
     public function rules()
     {
         return [
-            [['id', 'meeting_type', 'owner_phone', 'cstore_number', 'cstore_area', 'manager_phone', 'emplyees_number', 'hotel_floor', 'ticket', 'draw', 'invitation', 'box'], 'integer'],
-            [['meeting_topic', 'meeting_address', 'cstore_address', 'owner_id', 'manager_id', 'training_date', 'hotel_name', 'hotel_address', 'doctor_id', 'instructor_id', 'host_id', 'asistant_id', 'consultant_id', 'engineer_id', 'nurse_id', 'resident_id', 'cameraman_id', 'travel_arrangement', 'vehicle_type', 'renter_id', 'marketing_responsible_id', 'meeting_responsible_id', 'ko_solution', 'place_solution', 'creattime', 'comment'], 'safe'],
+            [['id','owner_phone', 'cstore_number', 'cstore_area', 'manager_phone', 'emplyees_number', 'hotel_floor', 'ticket', 'draw', 'invitation', 'box'], 'integer'],
+            [['meeting_topic', 'meeting_address', 'cstore_address', 'owner_id', 'manager_id', 'training_date', 'hotel_name', 'hotel_address', 'doctor_id', 'instructor_id', 'host_id', 'asistant_id', 'consultant_id', 'engineer_id', 'nurse_id', 'resident_id', 'cameraman_id', 'travel_arrangement', 'vehicle_type', 'renter_id', 'marketing_responsible_id', 'meeting_responsible_id', 'ko_solution', 'place_solution', 'creattime', 'comment','meeting_type'], 'safe'],
         ];
     }
 
@@ -62,7 +62,7 @@ class MeetingConvey extends MeetingConveyModel
             // $query->where('0=1');
             return $dataProvider;
         }
-        
+        // p($this->meeting_type);die;
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,

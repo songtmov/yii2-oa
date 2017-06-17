@@ -93,13 +93,7 @@ $this->registerCss('
 
         <div class="social-auth-links text-center">
             <p>　</p>
-            <!-- <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"> -->
-            <!-- <i class="fa fa-facebook"></i> -->
-            <!-- <img src="/statics\images\wechat.png"> 　　　　　　微信登陆 </a> -->
-            <!-- <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"> -->
-            <!-- <i class="fa fa-google-plus"></i> -->
-            <!-- <img src="/statics\images\xinlang.png">　　　　　　 微博登陆 </a> -->
-            <!-- </div> -->
+            <a href="http://www.miitbeian.gov.cn/">豫ICP备17005100号</a>
         </div>
     <!-- /.login-box-body -->
 </div><!-- /.login-box -->

@@ -25,11 +25,10 @@ use kartik\daterange\DateRangePicker;
             'labelOptions' => ['class' => 'col-md-2 col-xs-2 control-label'],]
     ]); ?>
     
-    <?= $form->field($model, 'meeting_type')->dropDownList(['0' => '小会','1' => '大会'],['prompt'=>'选择会议类型...']) ?>
+    <?= $form->field($model, 'meeting_type')->dropDownList(['小会' => '小会','大会' => '大会'],['prompt'=>'选择会议类型...']) ?>
     
-    <!-- <?//= $form->field($model, 'cstore_id')->textInput(['maxlength' => true]) ?> -->
     <?= $form->field($model, 'cstore_id')->widget(Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\common\models\Cstore::find()->all(),'id','store_name'),
+        'data' => \yii\helpers\ArrayHelper::map(\common\models\Cstore::find()->all(),'store_name','store_name'),
         'language' => 'zh-CN',
         'options' => ['placeholder' => '请选择……'],
         'pluginOptions' => [
@@ -57,7 +56,7 @@ use kartik\daterange\DateRangePicker;
     
     <!-- <?//= $form->field($model, 'doctor_id')->textInput(['maxlength' => true]) ?> -->
     <?= $form->field($model, 'doctor_id')->widget(Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '6'])->all(),'id','username'),
+        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '6'])->all(),'username','username'),
         'language' => 'zh-CN',
         'options' => ['placeholder' => '请选择……'],
         'pluginOptions' => [
@@ -67,7 +66,7 @@ use kartik\daterange\DateRangePicker;
     
     <!-- <?//= $form->field($model, 'asistant_id')->textInput(['maxlength' => true]) ?> -->
     <?= $form->field($model, 'asistant_id')->widget(Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '7'])->all(),'id','username'),
+        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '7'])->all(),'username','username'),
         'language' => 'zh-CN',
         'options' => ['placeholder' => '请选择……'],
         'pluginOptions' => [
@@ -77,7 +76,7 @@ use kartik\daterange\DateRangePicker;
     
     <!-- <?//= $form->field($model, 'nurse_id')->textInput(['maxlength' => true]) ?> -->
     <?= $form->field($model, 'nurse_id')->widget(Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '8'])->all(),'id','username'),
+        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '8'])->all(),'username','username'),
         'language' => 'zh-CN',
         'options' => ['placeholder' => '请选择……'],
         'pluginOptions' => [
@@ -87,7 +86,7 @@ use kartik\daterange\DateRangePicker;
     
     <!-- <?//= $form->field($model, 'resident_id')->textInput(['maxlength' => true]) ?> -->
     <?= $form->field($model, 'resident_id')->widget(Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '31'])->all(),'id','username'),
+        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '31'])->all(),'username','username'),
         'language' => 'zh-CN',
         'options' => ['placeholder' => '请选择……'],
         'pluginOptions' => [
@@ -97,7 +96,7 @@ use kartik\daterange\DateRangePicker;
     
     <!-- <?//= $form->field($model, 'host_id')->textInput(['maxlength' => true]) ?> -->
     <?= $form->field($model, 'host_id')->widget(Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '47'])->all(),'id','username'),
+        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '47'])->all(),'username','username'),
         'language' => 'zh-CN',
         'options' => ['placeholder' => '请选择……'],
         'pluginOptions' => [
@@ -107,14 +106,13 @@ use kartik\daterange\DateRangePicker;
     
     <!-- <?//= $form->field($model, 'consultant_id')->textInput(['maxlength' => true]) ?> -->
     <?= $form->field($model, 'consultant_id')->widget(Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '30'])->all(),'id','username'),
+        'data' => \yii\helpers\ArrayHelper::map(\common\models\UserModel::find()->where(['position_id' => '30'])->all(),'username','username'),
         'language' => 'zh-CN',
         'options' => ['placeholder' => '请选择……'],
         'pluginOptions' => [
             'allowClear' => true
         ],
     ]);?>
-    
     
     <!-- <?//= $form->field($model, 'creattime')->textInput() ?> -->
     <?php echo '<div class="form-group field-position-found_time required">

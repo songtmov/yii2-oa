@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
 use mdm\admin\components\Helper;
+use kartik\export\ExportMenu;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\MeetingConvey */
@@ -12,7 +13,53 @@ use mdm\admin\components\Helper;
 $this->title = Yii::t('common','会议传达表（市场部）');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<?php 
+// $gridColumns = [
+//     'meeting_type',
+//     'meeting_topic',
+//     'meeting_address',
+//     'cstore_id',
+//     'cstore_address',
+//     'owner_id',
+//     'owner_phone',
+//     'cstore_number',
+//     'cstore_area',
+//     'manager_id',
+//     'manager_phone',
+//     'emplyees_number',
+//     'training_date',
+//     'hotel_name',
+//     'hotel_address',
+//     'hotel_floor',
+//     'doctor_id',
+//     'instructor_id',
+//     'host_id',
+//     'asistant_id',
+//     'consultant_id',
+//     'engineer_id',
+//     'nurse_id',
+//     'resident_id',
+//     'cameraman_id',
+//     'travel_arrangement:ntext',
+//     'ticket',
+//     'draw',
+//     'invitation',
+//     'box',
+//     'vehicle_type',
+//     'renter_id',
+//     'marketing_responsible_id',
+//     'meeting_responsible_id',
+//     'ko_solution:ntext',
+//     'place_solution:ntext',
+//     'creattime',
+//     'comment:ntext'
+// ];
 
+// echo ExportMenu::widget([
+//     'dataProvider' => $dataProvider,
+//     'columns' => $gridColumns
+// ]);
+?>
 <div class="meeting-convey-index">
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -49,59 +96,51 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'meeting_type',
                 'value' => function($model){
-                    if($model->meeting_type){
-                        return '大会';
-                    }else{
-                        return '小会';
-                    }
+                    return $model->meeting_type;
                 },
                 'filter'=>Html::activeDropDownList(
                     $searchModel,
                     'meeting_type',
-                    [0=>'小会',1=>'大会'],
+                    ['小会'=>'小会','大会'=>'大会'],
                     ['class' => 'form-control', 'prompt' => '请选择....'])
             ],
             'meeting_topic',
             'meeting_address',
-            // 'cstore_id',
-            [
-                'attribute' => 'cstore_id',
-                'value' => 'cstore.store_name'
-            ],
-            // 'cstore_address',
-            // 'owner_id',
-            // 'owner_phone',
-            // 'cstore_number',
-            // 'cstore_area',
-            // 'manager_id',
-            // 'manager_phone',
-            // 'emplyees_number',
-            // 'training_date',
-            // 'hotel_name',
-            // 'hotel_address',
-            // 'hotel_floor',
-            // 'doctor_id',
-            // 'instructor_id',
-            // 'host_id',
-            // 'asistant_id',
-            // 'consultant_id',
-            // 'engineer_id',
-            // 'nurse_id',
-            // 'resident_id',
-            // 'cameraman_id',
-            // 'travel_arrangement:ntext',
-            // 'ticket',
-            // 'draw',
-            // 'invitation',
-            // 'box',
-            // 'vehicle_type',
-            // 'renter_id',
-            // 'marketing_responsible_id',
-            // 'meeting_responsible_id',
-            // 'ko_solution:ntext',
-            // 'place_solution:ntext',
-            // 'creattime',
-            // 'comment:ntext',
+            'cstore_id',
+            'cstore_address',
+            'owner_id',
+            'owner_phone',
+            'cstore_number',
+            'cstore_area',
+            'manager_id',
+            'manager_phone',
+            'emplyees_number',
+            'training_date',
+            'hotel_name',
+            'hotel_address',
+            'hotel_floor',
+            'doctor_id',
+            'instructor_id',
+            'host_id',
+            'asistant_id',
+            'consultant_id',
+            'engineer_id',
+            'nurse_id',
+            'resident_id',
+            'cameraman_id',
+            'travel_arrangement:ntext',
+            'ticket',
+            'draw',
+            'invitation',
+            'box',
+            'vehicle_type',
+            'renter_id',
+            'marketing_responsible_id',
+            'meeting_responsible_id',
+            'ko_solution:ntext',
+            'place_solution:ntext',
+            'creattime',
+            'comment:ntext',
 
 
             [

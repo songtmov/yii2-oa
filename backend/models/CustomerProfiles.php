@@ -43,7 +43,7 @@ class CustomerProfiles extends CustomerProfilesModel
     public function search($params)
     {
         $query = CustomerProfilesModel::find();
-
+        
         // add conditions that should always apply here
 
 //        $dataProvider = new ActiveDataProvider([
